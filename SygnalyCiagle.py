@@ -1,9 +1,14 @@
+import math
+
 class Sinusoidalny:
     def __init__(self, A, T, t1, d):
         self.A = A  # Amplituda
         self.T = T  # Okres podstawowy
         self.t1 = t1  # Czas początkowy
-        self.d = d  # Czas trwania sygnału
+        self.d = d  # Czas trwania sygnału TODO not implemented
+
+    def x(self, t):
+        return self.A * math.sin(((2 * math.pi) / self.T) * (t - self.t1))
 
 
 class SinusoidalnyWyprostowanyJednopolowkowo:
