@@ -1,5 +1,26 @@
 import math
 
+
+def wartoscSrednia():
+    return 0
+
+
+def wartoscSredniaBezwzgledna():
+    return 0
+
+
+def wartoscSkuteczna():
+    return 0
+
+
+def wariancja():
+    return 0
+
+
+def mocSrednia():
+    return 0
+
+
 class Sinusoidalny:
     def __init__(self, A, T, t1, d):
         self.A = A  # Amplituda
@@ -19,7 +40,8 @@ class SinusoidalnyWyprostowanyJednopolowkowo:
         self.d = d  # Czas trwania sygnału TODO not implemented
 
     def x(self, t):
-        return 0.5 * self.A * (math.sin(((2 * math.pi) / self.T) * (t - self.t1)) + math.fabs(math.sin(((2 * math.pi) / self.T) * (t - self.t1))))
+        return 0.5 * self.A * (math.sin(((2 * math.pi) / self.T) * (t - self.t1)) + math.fabs(
+            math.sin(((2 * math.pi) / self.T) * (t - self.t1))))
 
 
 class SinusoidalnyWyprostowanyDwupolowkowo:
@@ -30,7 +52,7 @@ class SinusoidalnyWyprostowanyDwupolowkowo:
         self.d = d  # Czas trwania sygnału TODO not implemented
 
     def x(self, t):
-        return self.A * math.fabs(math.sin(((2 * math.pi)/self.T) * (t - self.t1)))
+        return self.A * math.fabs(math.sin(((2 * math.pi) / self.T) * (t - self.t1)))
 
 
 class Prostokatny:
@@ -46,7 +68,6 @@ class Prostokatny:
             return 0
         else:
             return self.A * (t % self.T < (self.kw * self.T))
-
 
 
 class ProstokatnySymetryczny:

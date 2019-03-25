@@ -1,3 +1,23 @@
+def wartoscSrednia():
+    return 0
+
+
+def wartoscSredniaBezwzgledna():
+    return 0
+
+
+def wartoscSkuteczna():
+    return 0
+
+
+def wariancja():
+    return 0
+
+
+def mocSrednia():
+    return 0
+
+
 class ImpulsJednostkowy:
     def __init__(self, A, ns, n1, l, f):
         self.A = A  # Amplituda TODO not implemented
@@ -20,3 +40,6 @@ class SzumImpulsowy:
         self.d = d  # Czas trwania sygnału
         self.f = f  # Częstotliwość próbkowania
         self.p = p  # Prawdopodobieństwo wystąpienia wartości A
+
+    def x(self, n):
+        return 0 # TODO not implemented
