@@ -38,8 +38,15 @@ class Prostokatny:
         self.A = A  # Amplituda
         self.T = T  # Okres podstawowy
         self.t1 = t1  # Czas początkowy
-        self.d = d  # Czas trwania sygnału
+        self.d = d  # Czas trwania sygnału TODO not implemented
         self.kw = kw  # Współczynnik wypełnienia
+
+    def x(self, t):
+        if t < self.t1:
+            return 0
+        else:
+            return self.A * (t % self.T < (self.kw * self.T))
+
 
 
 class ProstokatnySymetryczny:
@@ -47,8 +54,17 @@ class ProstokatnySymetryczny:
         self.A = A  # Amplituda
         self.T = T  # Okres podstawowy
         self.t1 = t1  # Czas początkowy
-        self.d = d  # Czas trwania sygnału
+        self.d = d  # Czas trwania sygnału TODO not implemented
         self.kw = kw  # Współczynnik wypełnienia
+
+    def x(self, t):
+        if t < self.t1:
+            return 0
+        else:
+            if self.A * (t % self.T < (self.kw * self.T)):
+                return self.A
+            else:
+                return -self.A
 
 
 class Trojkatny:
@@ -56,13 +72,24 @@ class Trojkatny:
         self.A = A  # Amplituda
         self.T = T  # Okres podstawowy
         self.t1 = t1  # Czas początkowy
-        self.d = d  # Czas trwania sygnału
+        self.d = d  # Czas trwania sygnału TODO not implemented
         self.kw = kw  # Współczynnik wypełnienia
+
+    def x(self, t):
+        return 0  # TODO not implement
 
 
 class SkokJednostkowy:
     def __init__(self, A, t1, d, ts):
         self.A = A  # Amplituda
         self.t1 = t1  # Czas początkowy
-        self.d = d  # Czas trwania sygnału
-        self.ts = ts  # TODO
+        self.d = d  # Czas trwania sygnału TODO not implemented
+        self.ts = ts  # Skok
+
+    def x(self, t):
+        if t < self.t1 or t < self.ts:
+            return 0
+        elif t == self.ts:
+            return 0.5 * self.A
+        else:
+            return self.A

@@ -8,21 +8,17 @@ print("Hello")
 # inp = input("Enter:")
 # print(inp)
 
-sig = SygnalyCiagle.SinusoidalnyWyprostowanyDwupolowkowo(1, 20, 0.0, 20)
-
-sig2 = SygnalyCiagle.SinusoidalnyWyprostowanyDwupolowkowo(0.5, 5, 0.0, 20)
+sig = SygnalyCiagle.Sinusoidalny(1, 10, 0, 0)
 
 xTab = []
 yTab = []
 x = 0
-yTab2 = []
 
-while x < 50:
+while x < 20:
     xTab.append(x)
     yTab.append(sig.x(x))
-    yTab2.append(sig2.x(x))
     x += 0.1
 
 plt.plot(xTab, yTab)
-plt.plot(xTab, yTab2)
+# plt.axis([-0.2, 20.2, -1.2, 1.2])
 plt.show()
