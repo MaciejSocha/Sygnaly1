@@ -16,7 +16,10 @@ class SinusoidalnyWyprostowanyJednopolowkowo:
         self.A = A  # Amplituda
         self.T = T  # Okres podstawowy
         self.t1 = t1  # Czas początkowy
-        self.d = d  # Czas trwania sygnału
+        self.d = d  # Czas trwania sygnału TODO not implemented
+
+    def x(self, t):
+        return 0.5 * self.A * (math.sin(((2 * math.pi) / self.T) * (t - self.t1)) + math.fabs(math.sin(((2 * math.pi) / self.T) * (t - self.t1))))
 
 
 class SinusoidalnyWyprostowanyDwupolowkowo:
@@ -24,7 +27,10 @@ class SinusoidalnyWyprostowanyDwupolowkowo:
         self.A = A  # Amplituda
         self.T = T  # Okres podstawowy
         self.t1 = t1  # Czas początkowy
-        self.d = d  # Czas trwania sygnału
+        self.d = d  # Czas trwania sygnału TODO not implemented
+
+    def x(self, t):
+        return self.A * math.fabs(math.sin(((2 * math.pi)/self.T) * (t - self.t1)))
 
 
 class Prostokatny:

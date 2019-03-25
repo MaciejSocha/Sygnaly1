@@ -8,7 +8,7 @@ print("Hello")
 # inp = input("Enter:")
 # print(inp)
 
-sig = SygnalyCiagle.Sinusoidalny(1, 20, 0.0, 20)
+sig = SygnalyCiagle.SinusoidalnyWyprostowanyDwupolowkowo(1, 20, 0.0, 20)
 
 xTab = []
 yTab = []
