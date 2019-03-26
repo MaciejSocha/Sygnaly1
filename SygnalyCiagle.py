@@ -1,6 +1,26 @@
 import math
 
 
+def wartoscSrednia():
+    return 0
+
+
+def wartoscSredniaBezwzgledna():
+    return 0
+
+
+def wartoscSkuteczna():
+    return 0
+
+
+def wariancja():
+    return 0
+
+
+def mocSrednia():
+    return 0
+
+
 class Sinusoidalny:
     def __init__(self, A, T, t1, d, fp):
         self.A = A  # Amplituda

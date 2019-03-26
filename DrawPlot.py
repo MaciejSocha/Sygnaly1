@@ -4,6 +4,9 @@ import math
 
 def normalPlot(xTab, yTab):
     plt.plot(xTab, yTab)
+    plt.grid()
+    plt.xlabel("t")
+    plt.ylabel("A")
     plt.show()
 
 
