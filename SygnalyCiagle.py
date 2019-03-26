@@ -92,6 +92,7 @@ class SkokJednostkowy():
         r = 1 / (n2 - self.t1 + 1)
         n = self.t1
         suma = 0
+        n2 = math.floor(n2 / self.T)
         while n < n2:
             suma = self.x(n)
             n += self.fp
@@ -102,6 +103,7 @@ class SkokJednostkowy():
         r = 1 / (n2 - self.t1 + 1)
         n = self.t1
         suma = 0
+        n2 = math.floor(n2 / self.T)
         while n < n2:
             suma = math.fabs(self.x(n))
             n += self.fp
@@ -112,6 +114,7 @@ class SkokJednostkowy():
         r = 1 / (n2 - self.t1 + 1)
         n = self.t1
         suma = 0
+        n2 = math.floor(n2 / self.T)
         while n < n2:
             suma = math.pow(self.x(n), 2)
             n += self.fp
@@ -122,6 +125,7 @@ class SkokJednostkowy():
         r = 1 / (n2 - self.t1 + 1)
         n = self.t1
         suma = 0
+        n2 = math.floor(n2 / self.T)
         while n < n2:
             suma = math.pow((self.x(n) - self.wrSr()), 2)
             n += self.fp
@@ -132,6 +136,7 @@ class SkokJednostkowy():
         r = 1 / (n2 - self.t1 + 1)
         n = self.t1
         suma = 0
+        n2 = math.floor(n2 / self.T)
         while n < n2:
             suma = math.pow(self.x(n), 2)
             n += self.fp
