@@ -11,18 +11,21 @@ print("Hello")
 # inp = input("Enter:")
 # print(inp)
 
-sig = SygnalyCiagle.Sinusoidalny(1, 10, 0, 0)
+sig = SygnalyCiagle.Sinusoidalny(1, 10, 0, 50, 0.1)
 # sig = Szumy.SzumGausa(5, 0, 0)
 xTab = []
 yTab = []
 x = 0
 tmp = 0
 
-while x < 50:
-    xTab.append(x)
-    # tmp = sig.x(x)
-    yTab.append(sig.x(x))
-    x += 0.1
+# while x < 50:
+# xTab.append(x)
+# tmp = sig.x(x)
+# yTab.append(sig.x(x))
+# x += 0.1
+
+
+xTab, yTab = sig.mkTab()
 
 # plt.plot(xTab, yTab)
 
