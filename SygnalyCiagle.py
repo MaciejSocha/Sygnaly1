@@ -78,10 +78,7 @@ class Prostokatny:
         self.fp = fp  # Częstotliwość próbkowania
 
     def x(self, t):
-        if t < self.t1:
-            return 0
-        else:
-            return self.A * (t % self.T < (self.kw * self.T))
+        return self.A * (t % self.T < (self.kw * self.T))
 
     def mkTab(self):
         t = self.t1
@@ -104,13 +101,10 @@ class ProstokatnySymetryczny:
         self.fp = fp  # Częstotliwość próbkowania
 
     def x(self, t):
-        if t < self.t1:
-            return 0
+        if self.A * (t % self.T < (self.kw * self.T)):
+            return self.A
         else:
-            if self.A * (t % self.T < (self.kw * self.T)):
-                return self.A
-            else:
-                return -self.A
+            return -self.A
 
     def mkTab(self):
         t = self.t1
@@ -133,13 +127,10 @@ class Trojkatny:
         self.fp = fp  # Częstotliwość próbkowania
 
     def x(self, t):
-        if t < self.t1:
-            return 0
+        if self.A * (t % self.T < (self.kw * self.T)):
+            return (self.A / (self.kw * self.T)) * (t - (math.floor(t / self.T)) * self.T - self.t1)
         else:
-            if self.A * (t % self.T < (self.kw * self.T)):
-                return (self.A / (self.kw * self.T)) * (t - (math.floor(t / self.T)) * self.T - self.t1)
-            else:
-                return (-self.A / (self.T * (1 - self.kw))) * (t - (math.floor(t / self.T)) * self.T - self.t1) + (
+            return (-self.A / (self.T * (1 - self.kw))) * (t - (math.floor(t / self.T)) * self.T - self.t1) + (
                             self.A / (1 - self.kw))
 
     def mkTab(self):
@@ -162,7 +153,7 @@ class SkokJednostkowy:
         self.fp = fp  # Częstotliwość próbkowania
 
     def x(self, t):
-        if t < self.t1 or t < self.ts:
+        if t < self.ts:
             return 0
         elif t == self.ts:
             return 0.5 * self.A

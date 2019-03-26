@@ -11,8 +11,8 @@ print("Hello")
 # inp = input("Enter:")
 # print(inp)
 
-sig = SygnalyCiagle.Sinusoidalny(1, 10, 0, 50, 0.1)
-# sig = Szumy.SzumGausa(5, 0, 0)
+# sig = SygnalyCiagle.Sinusoidalny(1, 10, 0, 50, 0.1)
+sig = Szumy.SzumGausa(5, 0, 20, 0.05)
 xTab = []
 yTab = []
 x = 0
