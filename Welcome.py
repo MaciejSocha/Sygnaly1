@@ -50,3 +50,7 @@ plot.normalPlot(xTab2, yTab2)
 xRes, yRes = Operacje.iloczyn(xTab2, yTab2, xTab, yTab)
 
 plot.normalPlot(xRes, yRes)
+
+sgn = SygnalyDyskretne.ImpulsJednostkowy(1, 10, 0, 5, 0.2)
+t1, t2 = sgn.mkTab()
+plot.normalPlot(t1, t2)

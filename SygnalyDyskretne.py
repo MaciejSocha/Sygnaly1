@@ -22,7 +22,7 @@ class ImpulsJednostkowy:
         yTab = []
         while n < self.d:
             xTab.append(n)
-            yTab.append(self.x(n))
+            yTab.append(self.x(round(n/self.f)))
             n += self.f
         return xTab, yTab
 
