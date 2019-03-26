@@ -11,7 +11,7 @@ class ImpulsJednostkowy:
         self.f = f  # Częstość próbkowania
 
     def x(self, n):
-        if n == self.ns:
+        if n == self.ns - 1:
             return self.A
         else:
             return 0

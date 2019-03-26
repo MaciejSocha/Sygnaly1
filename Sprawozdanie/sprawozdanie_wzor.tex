@@ -311,21 +311,46 @@ Zarówno histogram jak i wykres sygna³u pokrywa siê ze spodziewanym wynikiem eksp
 Eksperyment nr 10 polega na wygenerowaniu impulsu jednostkowego.
 \subsubsection{Za³o¿enia}
 Eksperyment zosta³ przeprowadzony przy nastêpuj¹cych za³o¿eniach:\\
-$A=1$, $t_1=0$, $t_s=7$, $d=10$, gdzie $T_s$ oznacza czas skoku.
+$A=1$, $n_1=0$, $n_s=5$, $d=5$, $f_p=0.2$ gdzie kolejno $n_1$ oznacza pierwsz¹ próbkê, $n_s$ oznacza próbkê na której wystêpuje skok.
 \subsubsection{Przebieg}
 W programie zosta³y podane parametry zgodne z za³o¿eniami i na ich podstawie powsta³ wykres i histogram.
 \subsubsection{Rezultat}
-Rezultaty badañ eksperymentalnych przedstawione s¹ na Rysunku (19) oraz (20)
+Rezultaty badañ eksperymentalnych przedstawione s¹ na Rysunku (21) oraz (22)
 \begin{center}
-\includegraphics[scale=0.7]{s_Skok1.png}\\
+\includegraphics[scale=0.7]{s_Imp11.png}\\
 \begin{footnotesize}
-\textit{Rys. 19. Wykres Amplitudy od czasu dla skoku jednostkowego}
+\textit{Rys. 21. Wykres Amplitudy od czasu dla impulsu jednostkowego}
 \end{footnotesize}
 \end{center}
 \begin{center}
-\includegraphics[scale=0.7]{s_Skok2.png}\\
+\includegraphics[scale=0.7]{s_Imp12.png}\\
 \begin{footnotesize}
-\textit{Rys. 20. Histogram dla skoku jednostkowego}
+\textit{Rys. 22. Histogram dla impulsu jednostkowego}
+\end{footnotesize}
+\end{center}
+
+Zarówno histogram jak i wykres sygna³u pokrywa siê ze spodziewanym wynikiem eksperymentu. Dziêki czemu z du¿ym prawdopodobieñstwem jesteœmy wstanie stwierdziæ poprawnoœæ przeprowadzenia eksperymentu.
+\newpage
+
+\subsection{Eksperyment nr 11}
+Eksperyment nr 11 polega na wygenerowaniu szumu impulsowego.
+\subsubsection{Za³o¿enia}
+Eksperyment zosta³ przeprowadzony przy nastêpuj¹cych za³o¿eniach:\\
+$A=1$, $t_1=0$, $d=5$, $F_p=0.2$, $p=0.1$ gdzie $p$ oznacza prawdopodobieñstwo wyst¹pienia szumu.
+\subsubsection{Przebieg}
+W programie zosta³y podane parametry zgodne z za³o¿eniami i na ich podstawie powsta³ wykres i histogram.
+\subsubsection{Rezultat}
+Rezultaty badañ eksperymentalnych przedstawione s¹ na Rysunku (23) oraz (24)
+\begin{center}
+\includegraphics[scale=0.7]{s_Imp21.png}\\
+\begin{footnotesize}
+\textit{Rys. 23. Wykres Amplitudy od czasu dla szumu impulsowego}
+\end{footnotesize}
+\end{center}
+\begin{center}
+\includegraphics[scale=0.7]{s_Imp22.png}\\
+\begin{footnotesize}
+\textit{Rys. 24. Histogram dla szumu impulsowego}
 \end{footnotesize}
 \end{center}
 
@@ -337,7 +362,7 @@ Eksperyment nr 12 polega na wygenerowaniu  sumy sygna³ów.
 \subsubsection{Za³o¿enia}
 Zsumowany zosta³ sygna³ sinusoidalny o parametrach(Rys. 25):\\
 $A=1$, $T=3.14$, $t_1=0$, $d=10$\\
-Oraz szum Gaussowski o parametrach(Rys. 26):
+Oraz szum Gaussowski o parametrach(Rys. 26):\\
 $A=0.25$, $t_1=0$, $d=10$
 
 \subsubsection{Przebieg}
@@ -365,26 +390,140 @@ Rezultaty badañ eksperymentalnych przedstawione s¹ na Rysunku (27) oraz (28)
 \begin{center}
 \includegraphics[scale=0.7]{s_Sum4.png}\\
 \begin{footnotesize}
-\textit{Rys. 20. Histogram dla sumy wykresów (25) oraz (26)}
+\textit{Rys. 28. Histogram dla sumy wykresów (25) oraz (26)}
 \end{footnotesize}
 \end{center}
 
 Zarówno histogram jak i wykres sygna³u pokrywa siê ze spodziewanym wynikiem eksperymentu. Dziêki czemu z du¿ym prawdopodobieñstwem jesteœmy wstanie stwierdziæ poprawnoœæ przeprowadzenia eksperymentu.
 \newpage
 
+\subsection{Eksperyment nr 13}
+Eksperyment nr 13 polega na wygenerowaniu  ró¿nicy sygna³ów.
+\subsubsection{Za³o¿enia}
+Od sygna³u pi³okszta³tnego o parametrach(Rys. 29):\\
+$A=1$, $T=1$, $t_1=0$, $d=10$, $k_w=0.25$\\
+odjêty zosta³ sygna³ sinusoidalny o parametrach(Rys. 30):\\
+$A=1$, $T=3.14$, $t_1=0$, $d=10$
+
+\subsubsection{Przebieg}
+Po odjêciu sygna³ów z wykresu (30) od wykresu (29) powsta³ wykres (31) oraz histogram dla tego wykresu (32)
+\subsubsection{Rezultat}
+Rezultaty badañ eksperymentalnych przedstawione s¹ na Rysunku (31) oraz (32)
+\begin{center}
+\includegraphics[scale=0.7]{s_Roz1.png}\\
+\begin{footnotesize}
+\textit{Rys. 29. Wykres Amplitudy od czasu dla sygna³u pi³okszta³tnego}
+\end{footnotesize}
+\end{center}
+\begin{center}
+\includegraphics[scale=0.7]{s_Roz2.png}\\
+\begin{footnotesize}
+\textit{Rys. 30. Wykres Amplitudy od czasu dla sygna³u sinusoidalnego}
+\end{footnotesize}
+\end{center}
+\begin{center}
+\includegraphics[scale=0.7]{s_Roz3.png}\\
+\begin{footnotesize}
+\textit{Rys. 31. Wykres Amplitudy od czasu dla ró¿nicy wykresów (29) oraz (30)}
+\end{footnotesize}
+\end{center}
+\begin{center}
+\includegraphics[scale=0.7]{s_Roz4.png}\\
+\begin{footnotesize}
+\textit{Rys. 32. Histogram dla sumy wykresów (29) oraz (30)}
+\end{footnotesize}
+\end{center}
+
+Zarówno histogram jak i wykres sygna³u pokrywa siê ze spodziewanym wynikiem eksperymentu. Dziêki czemu z du¿ym prawdopodobieñstwem jesteœmy wstanie stwierdziæ poprawnoœæ przeprowadzenia eksperymentu.
+\newpage
+
+\subsection{Eksperyment nr 14}
+Eksperyment nr 14 polega na wygenerowaniu  iloczynów sygna³ów.
+\subsubsection{Za³o¿enia}
+Sygna³u prostok¹tnego o parametrach(Rys. 33):\\
+$A=1$, $T=2$, $t_1=0$, $d=10$, $k_w=0.25$\\
+oraz sygna³u sinusoidalnego wyprostowanego dwupo³ówkowo o parametrach(Rys. 34):\\
+$A=1$, $T=3.14$, $t_1=0$, $d=10$
+
+\subsubsection{Przebieg}
+Po przemno¿eniu sygna³ów z wykresu (33) od wykresu (34) powsta³ wykres (35) oraz histogram dla tego wykresu (36)
+\subsubsection{Rezultat}
+Rezultaty badañ eksperymentalnych przedstawione s¹ na Rysunku (35) oraz (36)
+\begin{center}
+\includegraphics[scale=0.7]{s_Ilocz1.png}\\
+\begin{footnotesize}
+\textit{Rys. 33. Wykres Amplitudy od czasu dla sygna³u prostok¹tnego}
+\end{footnotesize}
+\end{center}
+\begin{center}
+\includegraphics[scale=0.7]{s_Ilocz2.png}\\
+\begin{footnotesize}
+\textit{Rys. 34. Wykres Amplitudy od czasu dla sygna³u sinusoidalnego wyprostowanego dwupo³ówkowo}
+\end{footnotesize}
+\end{center}
+\begin{center}
+\includegraphics[scale=0.7]{s_Ilocz3.png}\\
+\begin{footnotesize}
+\textit{Rys. 35. Wykres Amplitudy od czasu dla iloczynu wykresów (33) oraz (34)}
+\end{footnotesize}
+\end{center}
+\begin{center}
+\includegraphics[scale=0.7]{s_Ilocz4.png}\\
+\begin{footnotesize}
+\textit{Rys. 36. Histogram dla iloczynu wykresów (33) oraz (34)}
+\end{footnotesize}
+\end{center}
+
+Zarówno histogram jak i wykres sygna³u pokrywa siê ze spodziewanym wynikiem eksperymentu. Dziêki czemu z du¿ym prawdopodobieñstwem jesteœmy wstanie stwierdziæ poprawnoœæ przeprowadzenia eksperymentu.
+\newpage
+
+\subsection{Eksperyment nr 15}
+Eksperyment nr 15 polega na wygenerowaniu  ilorazu sygna³ów.
+\subsubsection{Za³o¿enia}
+Sygna³u sinusoidalnego o parametrach(Rys. 37):\\
+$A=1$, $T=3.14$, $t_1=0$, $d=10$\\
+przez sygna³ trójk¹tny o parametrach(Rys. 38):\\
+$A=1$, $T=3.14$, $t_1=0$, $d=10$, $k_w=0.5$\\
+\subsubsection{Przebieg}
+Po podzieleniu sygna³ów z wykresu (37) przez sygna³ wykresu (38) powsta³ wykres (39) oraz histogram dla tego wykresu (40)
+\subsubsection{Rezultat}
+Rezultaty badañ eksperymentalnych przedstawione s¹ na Rysunku (39) oraz (40)
+\begin{center}
+\includegraphics[scale=0.7]{s_Ilor1.png}\\
+\begin{footnotesize}
+\textit{Rys. 37. Wykres Amplitudy od czasu dla sygna³u sinusoidalnego}
+\end{footnotesize}
+\end{center}
+\begin{center}
+\includegraphics[scale=0.7]{s_Ilor2.png}\\
+\begin{footnotesize}
+\textit{Rys. 38. Wykres Amplitudy od czasu dla sygna³u trójk¹tnego}
+\end{footnotesize}
+\end{center}
+\begin{center}
+\includegraphics[scale=0.7]{s_Ilor3.png}\\
+\begin{footnotesize}
+\textit{Rys. 39. Wykres Amplitudy od czasu dla ilorazu wykresów (29) oraz (30)}
+\end{footnotesize}
+\end{center}
+\begin{center}
+\includegraphics[scale=0.7]{s_Ilor4.png}\\
+\begin{footnotesize}
+\textit{Rys. 40. Histogram dla ilorazów wykresów (29) oraz (30)}
+\end{footnotesize}
+\end{center}
+
+Zarówno histogram jak i wykres sygna³u pokrywa siê ze spodziewanym wynikiem eksperymentu. Dziêki czemu z du¿ym prawdopodobieñstwem jesteœmy wstanie stwierdziæ poprawnoœæ przeprowadzenia eksperymentu.
+\newpage
 \section{Wnioski}
 
-Wnioski z przeprowadzonych eksperymentów dowodz¹, ¿e...
+Wnioski z przeprowadzonych eksperymentów pokazuj¹, ¿e program prawid³owo odwzorowuje zadane sygna³y, jak równie¿ poprawnie wykonuje proste operacje arytmetyczne na tych sygna³ach. w zwi¹zku z czym program nadaje siê do zastosowania w przysz³ych zadaniach. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PODROZDZIA£ PT. ZALACZNIKI
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Za³¹czniki*}
-
-Opcjonalnie, w zale¿noœci od zadania,
-np. fragment kodu Ÿród³owego.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
