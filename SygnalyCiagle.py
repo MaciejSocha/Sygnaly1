@@ -101,9 +101,10 @@ class Trojkatny:
             return 0
         else:
             if self.A * (t % self.T < (self.kw * self.T)):
-                return (self.A/(self.kw*self.T)) * (t - self.T - self.t1)
+               return (self.A/(self.kw*self.T)) * (t - (math.floor(t/self.T))*self.T - self.t1)
             else:
-                return (-self.A/(self.T*(1-self.kw))) * (t - self.T - self.t1) + (self.A/(1-self.kw))
+              return (-self.A/(self.T*(1-self.kw))) * (t - (math.floor(t/self.T))*self.T - self.t1) + (self.A/(1-self.kw))
+            # return (self.A /(self.T-self.kw))*(t - (math.floor(t/self.T))*self.T - self.t1)
 
 
 class SkokJednostkowy:
