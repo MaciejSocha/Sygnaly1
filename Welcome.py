@@ -30,8 +30,9 @@ xTab, yTab = sig.mkTab()
 
 # plt.plot(xTab, yTab)
 
-plot.normalPlot(xTab, yTab)
+# plot.normalPlot(xTab, yTab)
 plot.histPlot(yTab, 20)
+plot.discreetPlot(xTab, yTab)
 # plt.axis([-0.2, 20.2, -1.2, 1.2])
 # plt.show()
 

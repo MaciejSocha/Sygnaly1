@@ -23,3 +23,8 @@ def histPlot(yTab, parts):
             mp[w] += 1
     plt.bar(mp.keys(), mp.values())
     plt.show()
+
+
+def discreetPlot(xTab, yTab):
+    plt.plot(xTab, yTab, 'ro')
+    plt.show()
