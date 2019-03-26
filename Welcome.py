@@ -13,7 +13,7 @@ print("Hello")
 
 # sig = SygnalyCiagle.Trojkatny(1, 10, 0, 50, 0.3, 0.1)
 # sig = Szumy.SzumGausa(5, 0, 20, 0.05)
-sig = SygnalyDyskretne.SzumImpulsowy(1, 0, 50, 1, 0.1)
+sig = SygnalyCiagle.Trojkatny(1, 1, 0, 5, 0.75, 0.05)
 xTab = []
 yTab = []
 x = 0
@@ -30,9 +30,9 @@ xTab, yTab = sig.mkTab()
 
 # plt.plot(xTab, yTab)
 
-# plot.normalPlot(xTab, yTab)
-plot.histPlot(yTab, 20)
-plot.discreetPlot(xTab, yTab)
+plot.normalPlot(xTab, yTab)
+plot.histPlot(yTab, 10)
+#plot.discreetPlot(xTab, yTab)
 # plt.axis([-0.2, 20.2, -1.2, 1.2])
 # plt.show()
 
