@@ -8,10 +8,10 @@
 
 \setlength{\textheight}{21cm}
 
-\title{{\bf Zadanie nr N - nazwa zadania}\linebreak
+\title{{\bf Zadanie nr 1 - Generacja sygna³u i szumu}\linebreak
 Cyfrowe Przetwarzanie Sygna³ów}
-\author{Imiê Nazwisko, Nr albumu \and Imiê Nazwisko, Nr albumu}
-\date{data oddania zadania}
+\author{Wiktor Muraszko, 210281 \and Maciej Socha, 210321}
+\date{27.03.2019}
 
 \begin{document}
 \clearpage\maketitle
@@ -20,20 +20,32 @@ Cyfrowe Przetwarzanie Sygna³ów}
 \setcounter{page}{1}
 \section{Cel zadania}
 
-Opis celu zadania (proszê nie przepisywaæ treœci instrukcji!).\\
-Sprawozdanie nale¿y wykonaæ na podstawie\\ 
-szablonu \LaTeX-owego \texttt{sprawozdanie-wzor.tex}.
+Celem zadania by³o stworzenie programu do u¿ytku w ci¹gu bie¿¹cego semestru. Program ma
+generowaæ jedenaœcie rodzajów szumów i sygna³ów, jak równie¿ wykonywaæ podstawowe operacje
+na wygenerowanych sygna³ach. Do wymaganych operacji zalicza siê dodawanie, odejmowanie, mno¿enie oraz dzielenie. Poza tym program ma zapisywaæ próbkowane sygna³y do pliku z mo¿liwoœci¹ ich póŸniejszego odtworzenia jak równie¿ wyœwietlaæ wykresy oraz histogramy wytworzonych sygna³ów.
 
 \section{Wstêp teoretyczny}
 
-Krótki opis wykorzystywanych metod~\cite{dowolna_etykieta_artykulu}. Proszê nie umieszczaæ ogólnie znanych z literatury
-wzorów oraz definicji. Nale¿y podaæ jaka metoda zosta³a zastosowana, dlaczego oraz podaæ wykorzystan¹ literaturê (korzystaj¹c z odwo³añ do pozycji bibliografii~\cite{dowolna_etykieta_ksiazki}).\\
-Przygotowuj¹c bibliografiê nale¿y korzystaæ z podanego\\ 
-szablonu \BibTeX-owego \texttt{bibliografia-wzor.bib}.
+Wszystkie sygna³y i szumy zosta³y zaimplementowane w jêzyku PYTHON, wed³ug wzorów opisanych w "Cyfrowe przetwarzanie sygna³u Zadanie 1 Generacja sygna³u i szumu" dostêpnego na platformie WIKAMP. Przy implementacji skorzystaliœmy z nastêpuj¹cych bibliotek:
+\begin{itemize}
+\item {\bf munpy} - do generacji szumów
+\item {\bf math} - zawiera implementacje funkcji matematycznych takich jak $sin(x)$ u¿ytych w wielu czêœciach zadania
+\item {\bf matplotlib} - do generowania wykresów
+\item {\bf PySimpleGUI} - do stworzenia prostego interfejsu
+\end{itemize}
+W sprawozdaniu bêd¹ wystêpowa³y nastêpuj¹ce symbole:
+\begin{itemize}
+\item $A$ - amplituda
+\item $t_1$ - czas pocz¹tkowy w sekundach
+\item $d$ - czas trwania sygna³u w sekundach
+\item $T$ - okres podstawowy
+\item $k_w$ - wspó³czynnik wype³nienia
+\item $f_p$ - czêstotliwoœæ próbkowania
+\end{itemize}
 
 \section{Eksperymenty i wyniki}
 
-Opis wykonywanych eksperymentów. Wymagane jest ilustrowanie przeprowadzanych doœwiadczeñ wykresami oraz tabelami.
+%Opis wykonywanych eksperymentów. Wymagane jest ilustrowanie przeprowadzanych doœwiadczeñ %wykresami oraz tabelami.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PODROZDZIA£ PT. EKSPERYMENT NR 1 
@@ -41,52 +53,37 @@ Opis wykonywanych eksperymentów. Wymagane jest ilustrowanie przeprowadzanych doœ
 
 \subsection{Eksperyment nr 1}
 
-Eksperyment nr 1...\\
-Identycznoœciowa funkcja aktywacji ma postaæ:
-\begin{equation}
- \forall\: s \in \mathbb{R}\:\:\:\: f(s) = s
- \label{równanie funkcji identycznoœciowej}
-\end{equation}
-Jak widaæ z definicji (\ref{równanie funkcji identycznoœciowej}) funkcja ta...
-
+%Eksperyment nr 1...\\
+%Identycznoœciowa funkcja aktywacji ma postaæ:
+%\begin{equation}
+% \forall\: s \in \mathbb{R}\:\:\:\: f(s) = s
+% \label{równanie funkcji identycznoœciowej}
+%\end{equation}
+%Jak widaæ z definicji (\ref{równanie funkcji identycznoœciowej}) funkcja ta...
+Eksperyment nr 1 polega na wygenerowaniu szumu o rozk³adzie jednostajnym.
 \subsubsection{Za³o¿enia}
-
+Eksperyment zosta³ przeprowadzony przy nastêpuj¹cych za³o¿eniach:\\
+$A=5$, $t_1=0$, $d=20$
 \subsubsection{Przebieg}
-\newpage
-
+W programie zosta³y podane parametry zgodne z za³o¿eniami i na ich podstawie powsta³ wykres i histogram.
 \subsubsection{Rezultat}
 
-Rezultaty badañ eksperymentalnych przedstawione s¹ w Tab. \ref{wyniki eksperymentu pierwszego}.
-\begin{table}[h!]
- \caption{Rezultaty eksperymentu nr 1}
- \centering
- \vspace{0.2cm}
- \begin{tabular}{c c c c}
-  \hline\hline\\[-0.4cm]
-  \textbf{Przypadek} & \textbf{Metoda 1} & \textbf{Metoda 2} & \textbf{Metoda 3}\\[0.1cm]
-  \hline
-  \textbf{1} & 50 & 837 & 970  \\
-  \textbf{2} & 47 & 877 & 230  \\
-  \textbf{3} & 31 &  25 & 415  \\
-  \textbf{4} & 35 & 144 & 2356 \\
-  \textbf{5} & 45 & 300 & 556  \\ [0.1cm]
-  \hline
- \end{tabular}
- \label{wyniki eksperymentu pierwszego}
-\end{table}
+Rezultaty badañ eksperymentalnych przedstawione s¹ na Rysunku (1) oraz (2)
+\begin{center}
+\includegraphics[scale=0.7]{s_Jedno1.png}\\
+\begin{footnotesize}
+\textit{Rys. 1. Wykres Amplitudy od czasu dla szumu o rozk³adzie jednostajnym}
+\end{footnotesize}
+\end{center}
+\begin{center}
+\includegraphics[scale=0.7]{s_Jedno2.png}\\
+\begin{footnotesize}
+\textit{Rys. 2. Histogram dla szumu o rozk³adzie jednostajnym}
+\end{footnotesize}
+\end{center}
 
-\noindent Jak widaæ w Tab. \ref{wyniki eksperymentu pierwszego}...\newline
-Graficzna interpretacja wyników z Tab. \ref{wyniki eksperymentu pierwszego} 
-przedstawiona jest na wykresie Rys. \ref{rysunek do eksperymentu pierwszego} gdzie mo¿na zauwa¿yæ, ¿e...
-\begin{figure}[h!]
- \centering
- \includegraphics[width=9.3cm]{wykres.pdf}
- \vspace{-0.3cm}
- \caption{Wykres dla wyników eksperymentu pierwszego}
- \label{rysunek do eksperymentu pierwszego}
-\end{figure}
+Zarówno histogram jak i wykres szumu pokrywa siê ze spodziewanym wynikiem eksperymentu. Dziêki czemu z du¿ym prawdopodobieñstwem jesteœmy wstanie stwierdziæ poprawnoœæ przeprowadzenia eksperymentu.
 
-\noindent Jak widaæ z wykresu Rys. \ref{rysunek do eksperymentu pierwszego}...\newline
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PODROZDZIA£ PT. EKSPERYMENT NR 2 
@@ -94,88 +91,195 @@ przedstawiona jest na wykresie Rys. \ref{rysunek do eksperymentu pierwszego} gdz
 
 \newpage
 \subsection{Eksperyment nr 2}
-
-Eksperyment nr 2 polega³ na...\\
-Sigmoidalna funkcja aktywacji ma postaæ:
-\begin{equation}
- \forall\: s \in \mathbb{R}\:\:\:\:\:\: f(s) = \frac{1}{\:\:\:1 + e^{-\beta \cdot s}\:}\:,
- \:\:\:\:\textnormal{gdzie}\:\:\beta \in \mathbb{R}_{+}
- \label{równanie funkcji sigmoidalnej}
-\end{equation}
-Jak widaæ z równania definicyjnego (\ref{równanie funkcji sigmoidalnej}) 
-funkcja\footnote{ang. \textit{sigmoidal function} lub \textit{unipolar function}}
-ta ma wykres przedstawiony 
-na rysunku Rys. \ref{funkcja sigmoidalna}, gdzie paramater $\beta$ ...
-\begin{figure}[h!]
- \centering
- \includegraphics[width=7.3cm]{funkcja.png}
- \vspace{-0.1cm}
- \caption{Wykres funkcji sigmoidalnej}
- \label{funkcja sigmoidalna}
-\end{figure}
-
+Eksperyment nr 2 polega na wygenerowaniu szumu o rozk³adzie Gaussa.
 \subsubsection{Za³o¿enia}
-
+Eksperyment zosta³ przeprowadzony przy nastêpuj¹cych za³o¿eniach:\\
+$A=5$, $t_1=0$, $d=20$
 \subsubsection{Przebieg}
-
+W programie zosta³y podane parametry zgodne z za³o¿eniami i na ich podstawie powsta³ wykres i histogram.
 \subsubsection{Rezultat}
 
-Rezultaty badañ eksperymentalnych przedstawione s¹ w Tab. \ref{wyniki eksperymentu drugiego}.
-\vspace{-0.5cm}
-\begin{table}[h!]
- \caption{Rezultaty eksperymentu nr 2}
- \centering
- \vspace{0.2cm}
- \begin{tabular}{c c c }
-  \hline\hline\\[-0.4cm]
-  \textbf{Przypadek} & \textbf{Metoda 1} & \textbf{Metoda 2}\\[0.1cm]
-  \hline
-  \textbf{1} & 50 & 837 \\
-  \textbf{2} & 47 & 877 \\
-  \textbf{3} & 45 & 300 \\ [0.1cm]
-  \hline
- \end{tabular}
- \label{wyniki eksperymentu drugiego}
-\end{table}
+Rezultaty badañ eksperymentalnych przedstawione s¹ na Rysunku (3) oraz (4)
+\begin{center}
+\includegraphics[scale=0.7]{s_Gauss1.png}\\
+\begin{footnotesize}
+\textit{Rys. 3. Wykres Amplitudy od czasu dla szumu o rozk³adzie Gaussa}
+\end{footnotesize}
+\end{center}
+\begin{center}
+\includegraphics[scale=0.7]{s_Gauss2.png}\\
+\begin{footnotesize}
+\textit{Rys. 4. Histogram dla szumu o rozk³adzie Gaussa}
+\end{footnotesize}
+\end{center}
 
-\noindent Jak widaæ w Tab. \ref{wyniki eksperymentu drugiego}...\newline
-Wyniki w Tab. \ref{wyniki eksperymentu drugiego} œwiadcz¹ o tym, ¿e...
+Zarówno histogram jak i wykres szumu pokrywa siê ze spodziewanym wynikiem eksperymentu. Dziêki czemu z du¿ym prawdopodobieñstwem jesteœmy wstanie stwierdziæ poprawnoœæ przeprowadzenia eksperymentu.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PODROZDZIA£ PT. EKSPERYMENT NR N 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Eksperyment nr n}
-Eksperyment nr n zak³ada³, i¿...\\
-Dla dowolnej liczby $N \in \mathbb{N}$ funkcjê 
-$F_{N}:\mathbb{C}^{\:N}\!\rightarrow\mathbb{C}^{\:N}$
-zdefiniowan¹ w nastêpuj¹cy sposób:
-\vspace{-0.4cm}
-\begin{equation}
- \forall\:\mathbf{x} \in \mathbb{C}^{\:N}\:\:\:\:\:
- \forall\:k \in \{\:0,\dots,N - 1\:\!\}\:\:\:\:\:
- F_{N}\:\!(\:\mathbf{x}\:)_{k}\:\stackrel{\Delta}{=}\:
- \frac{1}{\sqrt{N}}\:
- \sum_{n = 0}^{N - 1}\:x_{n}\:\cdot\:
- e^{-j 2 \pi n k / N}
- \label{równanie dyskretnej transformaty Fouriera}
-\end{equation}
-nazywamy $N$ -- punktowym prostym jednowymiarowym dyskretnym przekszta³ceniem Fouriera.
-Na Rys. \ref{FFT} przedstawiono szybki algorytm obliczania dyskretnego 
-przekszta³cenia Fouriera\footnote{ang. \textit{Fast Fourier Transform}}.
-\begin{figure}[h!]
- \centering
- \includegraphics[width=0.8\linewidth]{transformata.pdf}
- \vspace{-0.1cm}
- \caption{Szybkie przekszta³cenie Fouriera}
- \label{FFT}
-\end{figure}
-
+\subsection{Eksperyment nr 3}
+Eksperyment nr 3 polega na wygenerowaniu sygna³u o kszta³cie sinusoidalnym.
 \subsubsection{Za³o¿enia}
-
+Eksperyment zosta³ przeprowadzony przy nastêpuj¹cych za³o¿eniach:\\
+$A=1$, $T=1$, $t_1=0$, $d=5$
 \subsubsection{Przebieg}
-
+W programie zosta³y podane parametry zgodne z za³o¿eniami i na ich podstawie powsta³ wykres i histogram.
 \subsubsection{Rezultat}
+Rezultaty badañ eksperymentalnych przedstawione s¹ na Rysunku (5) oraz (6)
+\begin{center}
+\includegraphics[scale=0.7]{s_Sin1.png}\\
+\begin{footnotesize}
+\textit{Rys. 5. Wykres Amplitudy od czasu dla sygna³u sinusoidalnego}
+\end{footnotesize}
+\end{center}
+\begin{center}
+\includegraphics[scale=0.7]{s_Sin2.png}\\
+\begin{footnotesize}
+\textit{Rys. 6. Histogram dla sygna³u sinusoidalnego}
+\end{footnotesize}
+\end{center}
+
+Zarówno histogram jak i wykres sygna³u pokrywa siê ze spodziewanym wynikiem eksperymentu. Dziêki czemu z du¿ym prawdopodobieñstwem jesteœmy wstanie stwierdziæ poprawnoœæ przeprowadzenia eksperymentu.
+\newpage
+
+\subsection{Eksperyment nr 4}
+Eksperyment nr 4 polega na wygenerowaniu sygna³u sinusoidalnego wyprostowanego jednopo³ówkowo.
+\subsubsection{Za³o¿enia}
+Eksperyment zosta³ przeprowadzony przy nastêpuj¹cych za³o¿eniach:\\
+$A=1$, $T=1$, $t_1=0$, $d=5$
+\subsubsection{Przebieg}
+W programie zosta³y podane parametry zgodne z za³o¿eniami i na ich podstawie powsta³ wykres i histogram.
+\subsubsection{Rezultat}
+Rezultaty badañ eksperymentalnych przedstawione s¹ na Rysunku (7) oraz (8)
+\begin{center}
+\includegraphics[scale=0.7]{s_Sin11.png}\\
+\begin{footnotesize}
+\textit{Rys. 7. Wykres Amplitudy od czasu dla sygna³u sinusoidalnego wyprostowanego jednopo³ówkowo}
+\end{footnotesize}
+\end{center}
+\begin{center}
+\includegraphics[scale=0.7]{s_Sin12.png}\\
+\begin{footnotesize}
+\textit{Rys. 8. Histogram dla sygna³u sygna³u sinusoidalnego wyprostowanego jednopo³ówkowo}
+\end{footnotesize}
+\end{center}
+
+Zarówno histogram jak i wykres sygna³u pokrywa siê ze spodziewanym wynikiem eksperymentu. Dziêki czemu z du¿ym prawdopodobieñstwem jesteœmy wstanie stwierdziæ poprawnoœæ przeprowadzenia eksperymentu.
+\newpage
+
+\subsection{Eksperyment nr 5}
+Eksperyment nr 5 polega na wygenerowaniu sygna³u sinusoidalnego wyprostowanego dwupo³ówkowo.
+\subsubsection{Za³o¿enia}
+Eksperyment zosta³ przeprowadzony przy nastêpuj¹cych za³o¿eniach:\\
+$A=1$, $T=1$, $t_1=0$, $d=5$
+\subsubsection{Przebieg}
+W programie zosta³y podane parametry zgodne z za³o¿eniami i na ich podstawie powsta³ wykres i histogram.
+\subsubsection{Rezultat}
+Rezultaty badañ eksperymentalnych przedstawione s¹ na Rysunku (9) oraz (10)
+\begin{center}
+\includegraphics[scale=0.7]{s_Sin21.png}\\
+\begin{footnotesize}
+\textit{Rys. 9. Wykres Amplitudy od czasu dla sygna³u sinusoidalnego wyprostowanego dwupo³ówkowo}
+\end{footnotesize}
+\end{center}
+\begin{center}
+\includegraphics[scale=0.7]{s_Sin22.png}\\
+\begin{footnotesize}
+\textit{Rys. 10. Histogram dla sygna³u sygna³u sinusoidalnego wyprostowanego dwupo³ówkowo}
+\end{footnotesize}
+\end{center}
+
+Zarówno histogram jak i wykres sygna³u pokrywa siê ze spodziewanym wynikiem eksperymentu. Dziêki czemu z du¿ym prawdopodobieñstwem jesteœmy wstanie stwierdziæ poprawnoœæ przeprowadzenia eksperymentu.
+\newpage
+
+\subsection{Eksperyment nr 6}
+Eksperyment nr 6 polega na wygenerowaniu sygna³u prostok¹tnego.
+\subsubsection{Za³o¿enia}
+Eksperyment zosta³ przeprowadzony przy nastêpuj¹cych za³o¿eniach:\\
+$A=1$, $T=1$, $t_1=0$, $k_w=0.75$, $d=5$
+\subsubsection{Przebieg}
+W programie zosta³y podane parametry zgodne z za³o¿eniami i na ich podstawie powsta³ wykres i histogram.
+\subsubsection{Rezultat}
+Rezultaty badañ eksperymentalnych przedstawione s¹ na Rysunku (11) oraz (12)
+\begin{center}
+\includegraphics[scale=0.7]{s_Pros11.png}\\
+\begin{footnotesize}
+\textit{Rys. 11. Wykres Amplitudy od czasu dla sygna³u prostok¹tnego}
+\end{footnotesize}
+\end{center}
+\begin{center}
+\includegraphics[scale=0.7]{s_Pros12.png}\\
+\begin{footnotesize}
+\textit{Rys. 12. Histogram dla sygna³u prostok¹tnegoo}
+\end{footnotesize}
+\end{center}
+
+Zarówno histogram jak i wykres sygna³u pokrywa siê ze spodziewanym wynikiem eksperymentu. Dziêki czemu z du¿ym prawdopodobieñstwem jesteœmy wstanie stwierdziæ poprawnoœæ przeprowadzenia eksperymentu.
+\newpage
+
+\subsection{Eksperyment nr 7}
+Eksperyment nr 7 polega na wygenerowaniu sygna³u prostok¹tnego symetrycznego.
+\subsubsection{Za³o¿enia}
+Eksperyment zosta³ przeprowadzony przy nastêpuj¹cych za³o¿eniach:\\
+$A=1$, $T=1$, $t_1=0$, $k_w=0.5$, $d=5$
+\subsubsection{Przebieg}
+W programie zosta³y podane parametry zgodne z za³o¿eniami i na ich podstawie powsta³ wykres i histogram.
+\subsubsection{Rezultat}
+Rezultaty badañ eksperymentalnych przedstawione s¹ na Rysunku (13) oraz (14)
+\begin{center}
+\includegraphics[scale=0.7]{s_Pros21.png}\\
+\begin{footnotesize}
+\textit{Rys. 13. Wykres Amplitudy od czasu dla sygna³u prostok¹tnego symetrycznego}
+\end{footnotesize}
+\end{center}
+\begin{center}
+\includegraphics[scale=0.7]{s_Pros22.png}\\
+\begin{footnotesize}
+\textit{Rys. 14. Histogram dla sygna³u prostok¹tnego symetrycznego}
+\end{footnotesize}
+\end{center}
+
+Zarówno histogram jak i wykres sygna³u pokrywa siê ze spodziewanym wynikiem eksperymentu. Dziêki czemu z du¿ym prawdopodobieñstwem jesteœmy wstanie stwierdziæ poprawnoœæ przeprowadzenia eksperymentu.
+\newpage
+
+\subsection{Eksperyment nr 8}
+Eksperyment nr 8 polega na wygenerowaniu sygna³u trójk¹tnego.
+\subsubsection{Za³o¿enia}
+Eksperyment zosta³ przeprowadzony przy nastêpuj¹cych za³o¿eniach:\\
+$A=1$, $T=1$, $t_1=0$, $k_w=0.5$, $d=5$ dla wykresów (15),(16)\\
+$A=1$, $T=1$, $t_1=0$, $k_w=0.75$, $d=5$ dla wykresów (17),(18)
+\subsubsection{Przebieg}
+W programie zosta³y podane parametry zgodne z za³o¿eniami i na ich podstawie powsta³ wykres i histogram.
+\subsubsection{Rezultat}
+Rezultaty badañ eksperymentalnych przedstawione s¹ na Rysunku (15), (16), (17) oraz (18)
+\begin{center}
+\includegraphics[scale=0.7]{s_Troj11.png}\\
+\begin{footnotesize}
+\textit{Rys. 15. Wykres Amplitudy od czasu sygna³u trójk¹tnego}
+\end{footnotesize}
+\end{center}
+\begin{center}
+\includegraphics[scale=0.7]{s_Troj12.png}\\
+\begin{footnotesize}
+\textit{Rys. 14. Histogram dla sygna³u trójk¹tnego}
+\end{footnotesize}
+\end{center}
+\begin{center}
+\includegraphics[scale=0.7]{s_Troj21.png}\\
+\begin{footnotesize}
+\textit{Rys. 13. Wykres Amplitudy od czasu dla sygna³u pi³okszta³tnego}
+\end{footnotesize}
+\end{center}
+\begin{center}
+\includegraphics[scale=0.7]{s_Troj22.png}\\
+\begin{footnotesize}
+\textit{Rys. 14. Histogram dla sygna³u pi³okszta³tnego}
+\end{footnotesize}
+\end{center}
+
+Zarówno histogram jak i wykres sygna³u pokrywa siê ze spodziewanym wynikiem eksperymentu.Okaza³o siê równie¿, ¿e przy zmienianiu wspó³czynnika wype³nienia z sygna³u trójk¹tnego mo¿na uzyskaæ pi³okszta³tny. Dziêki czemu z du¿ym prawdopodobieñstwem jesteœmy wstanie stwierdziæ poprawnoœæ przeprowadzenia eksperymentu.
 \newpage
 
 \section{Wnioski}
