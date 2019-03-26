@@ -12,7 +12,8 @@ print("Hello")
 # print(inp)
 
 # sig = SygnalyCiagle.Trojkatny(1, 10, 0, 50, 0.3, 0.1)
-sig = Szumy.SzumGausa(5, 0, 20, 0.05)
+# sig = Szumy.SzumGausa(5, 0, 20, 0.05)
+sig = SygnalyDyskretne.SzumImpulsowy(1, 0, 50, 1, 0.1)
 xTab = []
 yTab = []
 x = 0
@@ -34,4 +35,4 @@ plot.histPlot(yTab, 20)
 # plt.axis([-0.2, 20.2, -1.2, 1.2])
 # plt.show()
 
-print(sig.mcSr())
+# print(sig.mcSr())

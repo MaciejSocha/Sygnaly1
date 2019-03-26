@@ -1,50 +1,91 @@
 import numpy as np
-
-
-def wartoscSrednia():
-    return 0
-
-
-def wartoscSredniaBezwzgledna():
-    return 0
-
-
-def wartoscSkuteczna():
-    return 0
-
-
-def wariancja():
-    return 0
-
-
-def mocSrednia():
-    return 0
+import math
 
 
 class ImpulsJednostkowy:
-    def __init__(self, A, ns, n1, l, f):
-        self.A = A  # Amplituda TODO not implemented
+    def __init__(self, A, ns, n1, d, f):
+        self.A = A  # Amplituda
         self.ns = ns  # Numer próbki dla której następuje skok
-        self.n1 = n1  # Numer pierwszej próbki TODO not implemented
-        self.l = l  # TODO
-        self.f = f  # Częstość próbkowania TODO not implemented
+        self.n1 = n1  # Numer pierwszej próbki
+        self.d = d  # Czas trwania sygnału
+        self.f = f  # Częstość próbkowania
 
     def x(self, n):
         if n == self.ns:
-            return 1
+            return self.A
         else:
             return 0
+
+    def mkTab(self):
+        n = self.n1
+        xTab = []
+        yTab = []
+        while n < self.d:
+            xTab.append(n)
+            yTab.append(self.x(n))
+            n += self.f
+        return xTab, yTab
+
+    def wrSr(self):
+        n2 = self.n1 + self.d
+        r = 1 / (n2 - self.n1 + 1)
+        n = self.n1
+        suma = 0
+        while n < n2:
+            suma = self.x(n)
+            n += self.f
+        return r * suma
+
+    def wrSrBzw(self):
+        n2 = self.n1 + self.d
+        r = 1 / (n2 - self.n1 + 1)
+        n = self.n1
+        suma = 0
+        while n < n2:
+            suma = math.fabs(self.x(n))
+            n += self.f
+        return r * suma
+
+    def mcSr(self):
+        n2 = self.n1 + self.d
+        r = 1 / (n2 - self.n1 + 1)
+        n = self.n1
+        suma = 0
+        while n < n2:
+            suma = math.pow(self.x(n), 2)
+            n += self.f
+        return r * suma
+
+    def wr(self):
+        n2 = self.n1 + self.d
+        r = 1 / (n2 - self.n1 + 1)
+        n = self.n1
+        suma = 0
+        while n < n2:
+            suma = math.pow((self.x(n) - self.wrSr()), 2)
+            n += self.f
+        return r * suma
+
+    def wrSk(self):
+        n2 = self.n1 + self.d
+        r = 1 / (n2 - self.n1 + 1)
+        n = self.n1
+        suma = 0
+        while n < n2:
+            suma = math.pow(self.x(n), 2)
+            n += self.f
+        return math.sqrt(r * suma)
 
 
 class SzumImpulsowy:
     def __init__(self, A, t1, d, f, p):
         self.A = A  # Amplituda
-        self.t1 = t1  # Czas początkowy TODO not implemented
-        self.d = d  # Czas trwania sygnału TODO not implemented
-        self.f = f  # Częstotliwość próbkowania TODO not implemented
+        self.t1 = t1  # Czas początkowy
+        self.d = d  # Czas trwania sygnału
+        self.f = f  # Częstotliwość próbkowania
         self.p = p  # Prawdopodobieństwo wystąpienia wartości A
 
-    def x(self, n):
+    def x(self):
         aa = []
         aa.append(self.A)
         aa.append(0)
@@ -52,3 +93,63 @@ class SzumImpulsowy:
         pp.append(self.p)
         pp.append(1-self.p)
         return np.random.choice(aa, None, False, pp)
+
+    def mkTab(self):
+        t = self.t1
+        xTab = []
+        yTab = []
+        while t < self.d:
+            xTab.append(t)
+            yTab.append(self.x())
+            t += self.f
+        return xTab, yTab
+
+    def wrSr(self):
+        n2 = self.t1 + self.d
+        r = 1 / (n2 - self.t1 + 1)
+        n = self.t1
+        suma = 0
+        while n < n2:
+            suma = self.x()
+            n += self.f
+        return r * suma
+
+    def wrSrBzw(self):
+        n2 = self.t1 + self.d
+        r = 1 / (n2 - self.t1 + 1)
+        n = self.t1
+        suma = 0
+        while n < n2:
+            suma = math.fabs(self.x())
+            n += self.f
+        return r * suma
+
+    def mcSr(self):
+        n2 = self.t1 + self.d
+        r = 1 / (n2 - self.t1 + 1)
+        n = self.t1
+        suma = 0
+        while n < n2:
+            suma = math.pow(self.x(), 2)
+            n += self.f
+        return r * suma
+
+    def wr(self):
+        n2 = self.t1 + self.d
+        r = 1 / (n2 - self.t1 + 1)
+        n = self.t1
+        suma = 0
+        while n < n2:
+            suma = math.pow((self.x() - self.wrSr()), 2)
+            n += self.f
+        return r * suma
+
+    def wrSk(self):
+        n2 = self.t1 + self.d
+        r = 1 / (n2 - self.t1 + 1)
+        n = self.t1
+        suma = 0
+        while n < n2:
+            suma = math.pow(self.x(), 2)
+            n += self.f
+        return math.sqrt(r * suma)
