@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import SygnalyCiagle
 import Szumy
+import SygnalyDyskretne
 
 # plt.plot([1, 2, 3, 4])
 # plt.show()
@@ -9,8 +10,8 @@ print("Hello")
 # inp = input("Enter:")
 # print(inp)
 
-# sig = SygnalyCiagle.ProstokatnySymetryczny(1, 10, 0, 0, 0.2)
-sig = Szumy.SzumGausa(5, 0, 0)
+sig = SygnalyCiagle.Trojkatny(5, 5, 0, 0, 0.5)
+# sig = SygnalyDyskretne.SzumImpulsowy(5, 0, 0, 0, 0.2)
 xTab = []
 yTab = []
 x = 0

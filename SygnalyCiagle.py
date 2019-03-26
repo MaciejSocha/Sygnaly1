@@ -97,7 +97,13 @@ class Trojkatny:
         self.kw = kw  # Współczynnik wypełnienia
 
     def x(self, t):
-        return 0  # TODO not implement
+        if t < self.t1:
+            return 0
+        else:
+            if self.A * (t % self.T < (self.kw * self.T)):
+                return (self.A/(self.kw*self.T)) * (t - self.T - self.t1)
+            else:
+                return (-self.A/(self.T*(1-self.kw))) * (t - self.T - self.t1) + (self.A/(1-self.kw))
 
 
 class SkokJednostkowy:

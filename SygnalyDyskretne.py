@@ -1,3 +1,6 @@
+import numpy as np
+
+
 def wartoscSrednia():
     return 0
 
@@ -36,10 +39,16 @@ class ImpulsJednostkowy:
 class SzumImpulsowy:
     def __init__(self, A, t1, d, f, p):
         self.A = A  # Amplituda
-        self.t1 = t1  # Czas początkowy
-        self.d = d  # Czas trwania sygnału
-        self.f = f  # Częstotliwość próbkowania
+        self.t1 = t1  # Czas początkowy TODO not implemented
+        self.d = d  # Czas trwania sygnału TODO not implemented
+        self.f = f  # Częstotliwość próbkowania TODO not implemented
         self.p = p  # Prawdopodobieństwo wystąpienia wartości A
 
     def x(self, n):
-        return 0 # TODO not implemented
+        aa = []
+        aa.append(self.A)
+        aa.append(0)
+        pp = []
+        pp.append(self.p)
+        pp.append(1-self.p)
+        return np.random.choice(aa, None, False, pp)
