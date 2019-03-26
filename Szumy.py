@@ -1,5 +1,5 @@
 import random
-
+import math
 import numpy as np
 
 
@@ -22,6 +22,56 @@ class SzumJednostajny:
             yTab.append(self.x())
             t += self.fp
         return xTab, yTab
+
+    def wrSr(self):
+        n2 = self.t1 + self.d
+        r = 1 / (n2 - self.t1 + 1)
+        n = self.t1
+        suma = 0
+        while n < n2:
+            suma = self.x()
+            n += self.fp
+        return r * suma
+
+    def wrSrBzw(self):
+        n2 = self.t1 + self.d
+        r = 1 / (n2 - self.t1 + 1)
+        n = self.t1
+        suma = 0
+        while n < n2:
+            suma = math.fabs(self.x())
+            n += self.fp
+        return r * suma
+
+    def mcSr(self):
+        n2 = self.t1 + self.d
+        r = 1 / (n2 - self.t1 + 1)
+        n = self.t1
+        suma = 0
+        while n < n2:
+            suma = math.pow(self.x(), 2)
+            n += self.fp
+        return r * suma
+
+    def wr(self):
+        n2 = self.t1 + self.d
+        r = 1 / (n2 - self.t1 + 1)
+        n = self.t1
+        suma = 0
+        while n < n2:
+            suma = math.pow((self.x() - self.wrSr()), 2)
+            n += self.fp
+        return r * suma
+
+    def wrSk(self):
+        n2 = self.t1 + self.d
+        r = 1 / (n2 - self.t1 + 1)
+        n = self.t1
+        suma = 0
+        while n < n2:
+            suma = math.pow(self.x(), 2)
+            n += self.fp
+        return math.sqrt(r * suma)
 
 
 class SzumGausa:
@@ -48,3 +98,53 @@ class SzumGausa:
             yTab.append(self.x())
             t += self.fp
         return xTab, yTab
+
+    def wrSr(self):
+        n2 = self.t1 + self.d
+        r = 1 / (n2 - self.t1 + 1)
+        n = self.t1
+        suma = 0
+        while n < n2:
+            suma = self.x()
+            n += self.fp
+        return r * suma
+
+    def wrSrBzw(self):
+        n2 = self.t1 + self.d
+        r = 1 / (n2 - self.t1 + 1)
+        n = self.t1
+        suma = 0
+        while n < n2:
+            suma = math.fabs(self.x())
+            n += self.fp
+        return r * suma
+
+    def mcSr(self):
+        n2 = self.t1 + self.d
+        r = 1 / (n2 - self.t1 + 1)
+        n = self.t1
+        suma = 0
+        while n < n2:
+            suma = math.pow(self.x(), 2)
+            n += self.fp
+        return r * suma
+
+    def wr(self):
+        n2 = self.t1 + self.d
+        r = 1 / (n2 - self.t1 + 1)
+        n = self.t1
+        suma = 0
+        while n < n2:
+            suma = math.pow((self.x() - self.wrSr()), 2)
+            n += self.fp
+        return r * suma
+
+    def wrSk(self):
+        n2 = self.t1 + self.d
+        r = 1 / (n2 - self.t1 + 1)
+        n = self.t1
+        suma = 0
+        while n < n2:
+            suma = math.pow(self.x(), 2)
+            n += self.fp
+        return math.sqrt(r * suma)
