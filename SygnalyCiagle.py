@@ -1,124 +1,45 @@
 import math
+import SygnalyCiagleBase as baza
 
 
-def wartoscSrednia():
-    return 0
-
-
-def wartoscSredniaBezwzgledna():
-    return 0
-
-
-def wartoscSkuteczna():
-    return 0
-
-
-def wariancja():
-    return 0
-
-
-def mocSrednia():
-    return 0
-
-
-class Sinusoidalny:
+class Sinusoidalny(baza.SygnalCiagly):
     def __init__(self, A, T, t1, d, fp):
-        self.A = A  # Amplituda
-        self.T = T  # Okres podstawowy
-        self.t1 = t1  # Czas początkowy
-        self.d = d  # Czas trwania sygnału
-        self.fp = fp  # Częstotliwość próbkowania
+        super().__init__(A, T, t1, d, fp)
 
     def x(self, t):
         return self.A * math.sin(((2 * math.pi) / self.T) * (t - self.t1))
 
-    def mkTab(self):
-        t = self.t1
-        xTab = []
-        yTab = []
-        while t < self.d:
-            xTab.append(t)
-            yTab.append(self.x(t))
-            t += self.fp
-        return xTab, yTab
 
-
-class SinusoidalnyWyprostowanyJednopolowkowo:
+class SinusoidalnyWyprostowanyJednopolowkowo(baza.SygnalCiagly):
     def __init__(self, A, T, t1, d, fp):
-        self.A = A  # Amplituda
-        self.T = T  # Okres podstawowy
-        self.t1 = t1  # Czas początkowy
-        self.d = d  # Czas trwania sygnału
-        self.fp = fp  # Częstotliwość próbkowania
+        super().__init__(A, T, t1, d, fp)
 
     def x(self, t):
         return 0.5 * self.A * (math.sin(((2 * math.pi) / self.T) * (t - self.t1)) + math.fabs(
             math.sin(((2 * math.pi) / self.T) * (t - self.t1))))
 
-    def mkTab(self):
-        t = self.t1
-        xTab = []
-        yTab = []
-        while t < self.d:
-            xTab.append(t)
-            yTab.append(self.x(t))
-            t += self.fp
-        return xTab, yTab
 
-
-class SinusoidalnyWyprostowanyDwupolowkowo:
+class SinusoidalnyWyprostowanyDwupolowkowo(baza.SygnalCiagly):
     def __init__(self, A, T, t1, d, fp):
-        self.A = A  # Amplituda
-        self.T = T  # Okres podstawowy
-        self.t1 = t1  # Czas początkowy
-        self.d = d  # Czas trwania sygnału
-        self.fp = fp  # Częstotliwość próbkowania
+        super().__init__(A, T, t1, d, fp)
 
     def x(self, t):
         return self.A * math.fabs(math.sin(((2 * math.pi) / self.T) * (t - self.t1)))
 
-    def mkTab(self):
-        t = self.t1
-        xTab = []
-        yTab = []
-        while t < self.d:
-            xTab.append(t)
-            yTab.append(self.x(t))
-            t += self.fp
-        return xTab, yTab
 
-
-class Prostokatny:
+class Prostokatny(baza.SygnalCiagly):
     def __init__(self, A, T, t1, d, kw, fp):
-        self.A = A  # Amplituda
-        self.T = T  # Okres podstawowy
-        self.t1 = t1  # Czas początkowy
-        self.d = d  # Czas trwania sygnału
+        super().__init__(A, T, t1, d, fp)
         self.kw = kw  # Współczynnik wypełnienia
-        self.fp = fp  # Częstotliwość próbkowania
 
     def x(self, t):
         return self.A * (t % self.T < (self.kw * self.T))
 
-    def mkTab(self):
-        t = self.t1
-        xTab = []
-        yTab = []
-        while t < self.d:
-            xTab.append(t)
-            yTab.append(self.x(t))
-            t += self.fp
-        return xTab, yTab
 
-
-class ProstokatnySymetryczny:
+class ProstokatnySymetryczny(baza.SygnalCiagly):
     def __init__(self, A, T, t1, d, kw, fp):
-        self.A = A  # Amplituda
-        self.T = T  # Okres podstawowy
-        self.t1 = t1  # Czas początkowy
-        self.d = d  # Czas trwania sygnału
+        super().__init__(A, T, t1, d, fp)
         self.kw = kw  # Współczynnik wypełnienia
-        self.fp = fp  # Częstotliwość próbkowania
 
     def x(self, t):
         if self.A * (t % self.T < (self.kw * self.T)):
@@ -126,25 +47,11 @@ class ProstokatnySymetryczny:
         else:
             return -self.A
 
-    def mkTab(self):
-        t = self.t1
-        xTab = []
-        yTab = []
-        while t < self.d:
-            xTab.append(t)
-            yTab.append(self.x(t))
-            t += self.fp
-        return xTab, yTab
 
-
-class Trojkatny:
+class Trojkatny(baza.SygnalCiagly):
     def __init__(self, A, T, t1, d, kw, fp):
-        self.A = A  # Amplituda
-        self.T = T  # Okres podstawowy
-        self.t1 = t1  # Czas początkowy
-        self.d = d  # Czas trwania sygnału
+        super().__init__(A, T, t1, d, fp)
         self.kw = kw  # Współczynnik wypełnienia
-        self.fp = fp  # Częstotliwość próbkowania
 
     def x(self, t):
         if self.A * (t % self.T < (self.kw * self.T)):
@@ -153,19 +60,10 @@ class Trojkatny:
             return (-self.A / (self.T * (1 - self.kw))) * (t - (math.floor(t / self.T)) * self.T - self.t1) + (
                             self.A / (1 - self.kw))
 
-    def mkTab(self):
-        t = self.t1
-        xTab = []
-        yTab = []
-        while t < self.d:
-            xTab.append(t)
-            yTab.append(self.x(t))
-            t += self.fp
-        return xTab, yTab
-
 
 class SkokJednostkowy:
-    def __init__(self, A, t1, d, ts, fp):
+    def __init__(self, A, t1, d, ts, fp, T):
+        super().__init__(A, T, t1, d, fp)
         self.A = A  # Amplituda
         self.t1 = t1  # Czas początkowy
         self.d = d  # Czas trwania sygnału
