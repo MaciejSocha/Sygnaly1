@@ -32,5 +32,6 @@ def uratuj(xTab, yTab, f, d, t0):  # TODO no to nie działa poprawie, ale sprawi
             n += 1
         xRet.append(t)
         yRet.append(sum)
-        t += f
+        t += f/100
+    print("Koniec")
     return xRet, yRet

@@ -25,6 +25,7 @@ def kwantujTab(xTab, yTab, q):
             i += 1
         yTab[j] = miniIndex
         j += 1
+    print("Koniec")
     return xTab, yTab
 
 
@@ -33,4 +34,5 @@ def kwantujSig(signal, f, q):
     print("Kwantyzacja")
     x, y = Prb.probkuj(signal, f)
     xRez, yRez = kwantujTab(x, y, q)
+    print("Koniec")
     return xRez, yRez
