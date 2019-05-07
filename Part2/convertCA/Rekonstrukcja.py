@@ -1,4 +1,5 @@
 import math
+import DrawPlot
 
 
 def sinc(x):
@@ -8,7 +9,17 @@ def sinc(x):
         return math.sin(x) / (x)
 
 
-def uratuj(xTab, yTab, f, d, t0):
+def sincPlot(start, end, krok):
+    xTab = []
+    yTab = []
+    while start < end:
+        xTab.append(start)
+        yTab.append(sinc(start))
+        start += krok
+    DrawPlot.normalPlot(xTab, yTab)
+
+
+def uratuj(xTab, yTab, f, d, t0):  # TODO no to nie działa poprawie, ale sprawia pozory xD
     print("Rekonstrukcja")
     xRet = []
     yRet = []

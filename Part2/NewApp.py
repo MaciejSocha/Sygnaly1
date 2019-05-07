@@ -5,7 +5,7 @@ import Part2.convertAC.Kwantyzacja as kwantowanie
 import Part2.convertCA.Rekonstrukcja as rekonstrukcja
 
 # sygnał do konwersji
-signal = SygnalyCiagle.Sinusoidalny(5, 6, 0, 20, 0.01)
+signal = SygnalyCiagle.Sinusoidalny(7, 2, 0, 20, 0.01)
     # wykres początkowy
 xBase, yBase = signal.mkTab()
 DrawPlot.normalPlot(xBase, yBase)
@@ -23,7 +23,7 @@ xKwt, yKwa = kwantowanie.kwantujTab(xPrb, yPrb, q)
 
 # konwersja cyfrowo-analogowa (rekonstrukcja sygnału)
     # rekonstrukcja w opraciu o funkcję sinc
-xRek, yRek = rekonstrukcja.uratuj(xKwt, yKwa, 0.5, 20, 0)
+xRek, yRek = rekonstrukcja.uratuj(xKwt, yKwa, f, 20, 0)
 DrawPlot.normalPlot(xRek, yRek)
 
 # ---------- #
