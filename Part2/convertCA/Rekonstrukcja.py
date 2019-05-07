@@ -6,7 +6,7 @@ def sinc(x):
     if x == 0:
         return 1
     else:
-        return math.sin(x* math.pi) / (x*math.pi)
+        return math.sin(x * math.pi) / (x * math.pi)
 
 
 def sincPlot(start, end, krok):
