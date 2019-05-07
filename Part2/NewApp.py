@@ -5,7 +5,7 @@ import Part2.convertAC.Kwantyzacja as kwantowanie
 import Part2.convertCA.Rekonstrukcja as rekonstrukcja
 
 # sygnał do konwersji
-signal = SygnalyCiagle.Sinusoidalny(7, 2, 0, 20, 0.01)
+signal = SygnalyCiagle.Sinusoidalny(3, 3, 0, 20, 0.01)
     # wykres początkowy
 xBase, yBase = signal.mkTab()
 DrawPlot.normalPlot(xBase, yBase)
