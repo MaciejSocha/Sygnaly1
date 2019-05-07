@@ -19,7 +19,7 @@ class SygnalCiagly:
         while t < self.d:
             xTab.append(t)
             yTab.append(self.x(t))
-            t += self.fp
+            t += self.fp #TODO To nie jest częstość! Trzeba poprawić fp
         return xTab, yTab
 
     def wrSr(self):
