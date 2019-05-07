@@ -19,3 +19,6 @@ Warinaty:
 -  C4 - Maksymalna różnica (MD)
   
 -  A3 - f0 = 220Hz, fs = 44100Hz
+
+Jakieś linki, moje notatki:
+- http://zet10.ipee.pwr.wroc.pl/cyf/cps_w03_v8.pdf
