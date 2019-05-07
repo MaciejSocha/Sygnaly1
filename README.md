@@ -12,7 +12,7 @@ Zadanie 2 - Próbkowanie i kwantyzacja
 
 Warinaty:
   
--  Q1 - Kwnatyzacja równomierna z obcięciem
+-  Q1 - Kwnatyzacja równomierna z obcięciem ✔
   
 -  R3 - Rekonstrukcja w oparciu o funkcję sinc
   
