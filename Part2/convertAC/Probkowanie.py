@@ -9,7 +9,7 @@ def probkuj(sygnal, f):
     yTab = []
     t = sygnal.t1
     while t < sygnal.d:
-        yTab.append(sygnal.x(t * f))
+        yTab.append(sygnal.x(t))
         xTab.append(t)
-        t += 1
+        t += f
     return xTab, yTab

@@ -12,14 +12,14 @@ DrawPlot.normalPlot(xBase, yBase)
 
 # konwersja analogowo-cyfrowa
     # próbkowanie - próbkowanie równomierne
-f = 0.4  # częstotliwość próbkowania - w sumie to nie cześtotliwość - do pomyślenia
+f = 0.1  # częstotliwość próbkowania - w sumie to nie cześtotliwość - do pomyślenia
 xPrb, yPrb = probkowanie.probkuj(signal, f)
-# DrawPlot.discreetPlot(xPrb, yPrb)
+DrawPlot.discreetPlot(xPrb, yPrb)
 
     # kwantyzacja - kwnatyzacja równomierna z obcięciem
-q = 5  # liość przedziałów kwantyzacji
+q = 15  # liość przedziałów kwantyzacji
 xKwt, yKwa = kwantowanie.kwantujTab(xPrb, yPrb, q)
-# DrawPlot.discreetPlot(xKwt, yKwa)
+DrawPlot.discreetPlot(xKwt, yKwa)
 
 # konwersja cyfrowo-analogowa (rekonstrukcja sygnału)
     # rekonstrukcja w opraciu o funkcję sinc
