@@ -26,7 +26,7 @@ def histPlot(yTab, parts):
 
 
 def discreetPlot(xTab, yTab):
-    plt.plot(xTab, yTab, 'ro')
+    plt.plot(xTab, yTab, 'r.')
     plt.grid()
     plt.xlabel("t")
     plt.ylabel("A")
