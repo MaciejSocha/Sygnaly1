@@ -22,8 +22,8 @@ for x in range(25):
 
 # DrawPlot.normalPlot(tabx, taby)
 
-sig1 = SygnalyCiagle.Sinusoidalny(1, 2, 0, 5, 0.01)
-sig2 = SygnalyCiagle.Sinusoidalny(0.1, 0.1, 0, 5, 0.01)
+sig1 = SygnalyCiagle.Prostokatny(1, 2, 0, 5, 0.5, 0.01)
+sig2 = SygnalyCiagle.Prostokatny(0.1, 0.1, 0, 5, 0.2, 0.01)
 
 x1 = []
 x2 = []
@@ -35,13 +35,13 @@ x2, y2 = sig2.mkTab()
 
 x, y = Operacje.suma(x1, y1, x2, y2)
 
-DrawPlot.normalPlot(x, y)
+DrawPlot.normalPlot(x1, y1)
 
-M = 63
+M = 64
 K = 4
 
 odp = Dolnoprzepustowy.low_high_filter(M, K)
 
-xs, ys = Splot.SplotDyskretny(x, y, x, odp)
+xs, ys = Splot.SplotDyskretny(x1, y1, x1, odp)
 
 DrawPlot.normalPlot(xs, ys)
