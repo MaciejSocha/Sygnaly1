@@ -9,3 +9,16 @@ def multisinus(t):
     x = (2 * sin1) + sin2 + (5 * sin3)
 
     return x
+
+
+def rangesinus(tp, tk):
+    xT = []
+    yT = []
+    x = 1 / 16
+
+    while tp < tk:
+        xT.append(tp)
+        yT.append(multisinus(tp))
+        tp += x
+
+    return xT, yT

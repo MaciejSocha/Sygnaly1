@@ -11,3 +11,7 @@ while x < 6:
     x += 0.01
 
 DrawPlot.normalPlot(xTab, yTab)
+
+xx, yy = Sinus.rangesinus(0, 6)
+
+DrawPlot.normalPlot(xx, yy)
