@@ -7,12 +7,18 @@ Virtualenv Enviroment - venv
 Plotter - Matplotlib
 
 ----------
-Zadanie 3
+Zadanie 4
 
 
 Warinaty:
   
--  O2 - Okno Hanninga
+-  W1 – górny wykres prezentuje część rzeczywistą amplitudy w funkcji
+częstotliwości, a wykres dolny część urojoną
   
--  Filtr pasmowy
- 
+-  F1 – dyskretna transformacja Fouriera – algorytm z definicji oraz szybka
+transformacja Fouriera z decymacją w dziedzinie czasu (DIT FFT)
+
+- T2 – transformacja Walsha-Hadamarda oraz szybka transformacja Walsha-
+Hadamarda
+
+- S2 – wzór
