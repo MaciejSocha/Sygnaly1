@@ -1,5 +1,5 @@
 import DrawPlot
-from Part4 import Sinus
+from Part4 import Sinus, WalshHadamard
 
 xTab = []
 yTab = []
@@ -10,8 +10,12 @@ while x < 6:
     yTab.append(Sinus.multisinus(x))
     x += 0.01
 
-DrawPlot.normalPlot(xTab, yTab)
+# DrawPlot.normalPlot(xTab, yTab)
 
 xx, yy = Sinus.rangesinus(0, 6)
 
-DrawPlot.normalPlot(xx, yy)
+# DrawPlot.normalPlot(xx, yy)
+
+whyy = WalshHadamard.calc(yy)
+
+DrawPlot.normalPlot(xx, whyy)
