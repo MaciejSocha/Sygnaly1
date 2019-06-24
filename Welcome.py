@@ -33,7 +33,7 @@ sig = SygnalyCiagle.Sinusoidalny(1, 15, 0, 5, 0.2)
 
 xTab, yTab = sig.mkTab()
 # xTab2, yTab2 = sig2.mkTab()
-
+plot.complexPlot(xTab,xTab,yTab)
 # plt.plot(xTab, yTab)
 
 plot.normalPlot(xTab, yTab)
@@ -56,7 +56,7 @@ plot.normalPlot(xTab, yTab)
 # t1, t2 = sgn.mkTab()
 # plot.discreetPlot(t1, t2)
 
-SaveLoad.save(xTab, yTab, "plik1.txt")
+#SaveLoad.save(xTab, yTab, "plik1.txt")
 
-xx, yy = SaveLoad.load("plik1.txt")
-plot.normalPlot(xx, yy)
+#xx, yy = SaveLoad.load("plik1.txt")
+#plot.normalPlot(xx, yy)
