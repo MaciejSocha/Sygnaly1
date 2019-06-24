@@ -8,6 +8,7 @@ import SaveLoad
 
 # plt.plot([1, 2, 3, 4])
 # plt.show()
+from Part4.Fourier import DFT
 
 print("Hello")
 # inp = input("Enter:")
@@ -32,11 +33,12 @@ sig = SygnalyCiagle.Sinusoidalny(1, 15, 0, 5, 0.2)
 
 
 xTab, yTab = sig.mkTab()
+X, Y, Yi = DFT(xTab,yTab)
 # xTab2, yTab2 = sig2.mkTab()
-plot.complexPlot(xTab,xTab,yTab)
+plot.complexPlot(X, Y, Yi)
 # plt.plot(xTab, yTab)
 
-plot.normalPlot(xTab, yTab)
+#plot.normalPlot(xTab, yTab)
 # plot.normalPlot(xTab2, yTab2)
 # plot.histPlot(yTab, 20)
 # plot.discreetPlot(xTab, yTab)

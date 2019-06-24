@@ -31,7 +31,7 @@ def discreetPlot(xTab, yTab):
     plt.xlabel("t")
     plt.ylabel("A")
     plt.show()
-def complexPlot(xTab, xiTab, yTab):
+def complexPlot(xTab, yTab,yiTab):
     plt.subplot(2,1,1)
     plt.plot(xTab, yTab, 'r.-')
     plt.grid()
@@ -39,7 +39,7 @@ def complexPlot(xTab, xiTab, yTab):
     plt.xlabel("f")
     plt.ylabel("A")
     plt.subplot(2,1,2)
-    plt.plot(xiTab, yTab, 'r.-')
+    plt.plot(xTab, yiTab, 'r.-')
     plt.grid()
     plt.title("wykres amplitudy od częstotliwości(część urojona)")
     plt.xlabel("f")
