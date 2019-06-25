@@ -1,4 +1,8 @@
+import numpy
 from scipy.linalg import hadamard
+import math
+
+from Part4 import MatrixMultiplication
 
 print(hadamard(256))
 
@@ -28,8 +32,10 @@ def calc(tabX, tab):
 
     # Main part
     hd = hadamard(w)
-    newtab = [[0 for x in range(w)] for y in range(1)]
+    newtab = [[0 for x in range(1)] for y in range(w)]
     for x in range(nb-1):
-        newtab[0][x] = tab[x]
-    tabret = hd * newtab
+        newtab[x][0] = tab[x]
+
+    nt = numpy.asanyarray(newtab)
+    tabret = MatrixMultiplication.matrixVector(hd, nt)
     return tabX, tabret
