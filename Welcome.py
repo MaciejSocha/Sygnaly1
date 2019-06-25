@@ -17,48 +17,38 @@ print("Hello")
 # sig = SygnalyCiagle.Trojkatny(1, 10, 0, 50, 0.3, 0.1)
 # sig = Szumy.SzumGausa(5, 0, 20, 0.05)
 # sig = SygnalyCiagle.Trojkatny(1, 1, 0, 5, 0.75, 0.05)
-xTab = []
-yTab = []
+
+fp = 1000
+fs = 10
+deltaT = 1.0/fp
+T = 1/fs
+A = 1
+duration = 10
+
+
+
+
 # sig = SygnalyDyskretne.SzumImpulsowy(1, 0, 50, 1, 0.5)
-sig = SygnalyCiagle.Sinusoidalny(1, 15, 0, 5, 0.2)
-# sig2 = SygnalyCiagle.Prostokatny(1, 15, 0, 30, 0.5, 0.2)
-# x = 0
-# tmp = 0
-
-# while x < 50:
-# xTab.append(x)
-# tmp = sig.x(x)
-# yTab.append(sig.x(x))
-# x += 0.1
-
-
+sig = SygnalyCiagle.Sinusoidalny(A, T, 0, duration, deltaT)
+sig2 = SygnalyCiagle.Sinusoidalny(A, T*2, 0, duration,deltaT)
 xTab, yTab = sig.mkTab()
-X, Y, Yi = DFT(xTab,yTab)
+x2, y2 = sig2.mkTab()
+sumax,sumay =Operacje.suma(xTab,yTab,x2,y2)
+
+N = len(xTab)
+
+f0 = 1/(deltaT*N)
+f01 = fp/N
+# sig2 = SygnalyCiagle.Prostokatny(1, 15, 0, 30, 0.5, 0.2)
+print(f0)
+print(fs)
+
+X, Y, Yi, Ymod = DFT(sumax, sumay, 300)
+
+for x in range(len(X)):
+    X[x] *= f0
 # xTab2, yTab2 = sig2.mkTab()
-plot.complexPlot(X, Y, Yi)
+plot.FourierMod(X, Ymod)
+plot.FourierComplexPlot(X, Y, Yi)
 # plt.plot(xTab, yTab)
 
-#plot.normalPlot(xTab, yTab)
-# plot.normalPlot(xTab2, yTab2)
-# plot.histPlot(yTab, 20)
-# plot.discreetPlot(xTab, yTab)
-# plot.normalPlot(xTab, yTab)
-# plot.histPlot(yTab, 10)
-# plot.discreetPlot(xTab, yTab)
-# plt.axis([-0.2, 20.2, -1.2, 1.2])
-# plt.show()
-
-# print(sig.mcSr())
-
-# xRes, yRes = Operacje.iloczyn(xTab2, yTab2, xTab, yTab)
-
-# plot.normalPlot(xRes, yRes)
-
-# sgn = SygnalyDyskretne.ImpulsJednostkowy(1, 25, 0, 10, 0.2)
-# t1, t2 = sgn.mkTab()
-# plot.discreetPlot(t1, t2)
-
-#SaveLoad.save(xTab, yTab, "plik1.txt")
-
-#xx, yy = SaveLoad.load("plik1.txt")
-#plot.normalPlot(xx, yy)
