@@ -16,6 +16,6 @@ xx, yy = Sinus.rangesinus(0, 6)
 
 # DrawPlot.normalPlot(xx, yy)
 
-whyy = WalshHadamard.calc(yy)
+whxx, whyy = WalshHadamard.calc(xx, yy)
 
-DrawPlot.normalPlot(xx, whyy)
+# DrawPlot.normalPlot(whxx, whyy)
