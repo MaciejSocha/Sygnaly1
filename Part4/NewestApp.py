@@ -13,8 +13,8 @@ while x < 6:
 
 # DrawPlot.normalPlot(xTab, yTab)
 
-xx, yy = Sinus.rangesinus(0, 6)
-# xx, yy = SygnalyCiagle.Sinusoidalny(1, 3, 0, 10, 0.1).mkTab()
+# xx, yy = Sinus.rangesinus(0, 6)
+xx, yy = SygnalyCiagle.Sinusoidalny(1, 3, 0, 10, 0.1).mkTab()
 
 # DrawPlot.normalPlot(xx, yy)
 
@@ -22,6 +22,6 @@ whxx, whyy = WalshHadamard.calc(xx, yy)
 
 DrawPlot.normalPlot(whxx, whyy)
 
-why = FastWalshHadamard.fwht(yy)
+whx, why = FastWalshHadamard.fast(xx, yy)
 
-DrawPlot.normalPlot(whxx, why)
+DrawPlot.normalPlot(whx, why)
