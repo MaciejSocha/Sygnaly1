@@ -1,6 +1,6 @@
 import DrawPlot
 import SygnalyCiagle
-from Part4 import Sinus, WalshHadamard
+from Part4 import Sinus, WalshHadamard, FastWalshHadamard
 
 xTab = []
 yTab = []
@@ -21,3 +21,7 @@ xx, yy = Sinus.rangesinus(0, 6)
 whxx, whyy = WalshHadamard.calc(xx, yy)
 
 DrawPlot.normalPlot(whxx, whyy)
+
+why = FastWalshHadamard.fwht(yy)
+
+DrawPlot.normalPlot(whxx, why)
