@@ -35,7 +35,7 @@ def discreetPlot(xTab, yTab):
 def FourierMod(xTab, yTab):
     plt.plot(xTab, yTab, 'r.')
     plt.grid()
-    plt.title("Moduł DFT")
+    plt.title("Moduł FFT")
     plt.xlabel("f[Hz]")
     plt.show()
 
@@ -60,11 +60,11 @@ def FourierComplexPlot(xTab, yTab,yiTab):
     plt.subplot(2,1,1)
     plt.plot(xTab, yTab, 'r.')
     plt.grid()
-    plt.title("Wartości DFT (część rzeczywista)")
+    plt.title("Wartości FFT (część rzeczywista)")
     plt.xlabel("f[Hz]")
     plt.subplot(2,1,2)
     plt.plot(xTab, yiTab, 'r.')
     plt.grid()
-    plt.title("Wartości DFT (część urojona)")
+    plt.title("Wartości FFT (część urojona)")
     plt.xlabel("f[Hz]")
     plt.show()

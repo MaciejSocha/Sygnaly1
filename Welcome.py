@@ -4,11 +4,13 @@ import Szumy
 import SygnalyDyskretne
 import DrawPlot as plot
 import Operacje
+import math
 import SaveLoad
 
 # plt.plot([1, 2, 3, 4])
 # plt.show()
 from Part4.Fourier import DFT
+from Part4.Fourier import FFT
 
 print("Hello")
 # inp = input("Enter:")
@@ -40,8 +42,7 @@ N = len(xTab)
 f0 = 1/(deltaT*N)
 f01 = fp/N
 # sig2 = SygnalyCiagle.Prostokatny(1, 15, 0, 30, 0.5, 0.2)
-print(f0)
-print(fs)
+
 
 X, Y, Yi, Ymod = DFT(sumax, sumay, 300)
 
@@ -50,5 +51,6 @@ for x in range(len(X)):
 # xTab2, yTab2 = sig2.mkTab()
 plot.FourierMod(X, Ymod)
 plot.FourierComplexPlot(X, Y, Yi)
-# plt.plot(xTab, yTab)
+
+
 
