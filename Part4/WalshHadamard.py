@@ -4,7 +4,7 @@ import math
 
 from Part4 import MatrixMultiplication
 
-print(hadamard(256))
+# print(hadamard(256))
 
 
 def calc(tabX, tab):

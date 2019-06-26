@@ -9,6 +9,7 @@ import SaveLoad
 
 # plt.plot([1, 2, 3, 4])
 # plt.show()
+from Part4 import Sinus
 from Part4.Fourier import DFT
 from Part4.Fourier import FFT
 
@@ -32,7 +33,7 @@ duration = 10
 
 # sig = SygnalyDyskretne.SzumImpulsowy(1, 0, 50, 1, 0.5)
 sig = SygnalyCiagle.Sinusoidalny(A, T, 0, duration, deltaT)
-sig2 = SygnalyCiagle.Sinusoidalny(A, T*2, 0, duration,deltaT)
+sig2 = SygnalyCiagle.Sinusoidalny(A, T*2, 0, duration, deltaT)
 xTab, yTab = sig.mkTab()
 x2, y2 = sig2.mkTab()
 sumax,sumay =Operacje.suma(xTab,yTab,x2,y2)
@@ -42,9 +43,11 @@ N = len(xTab)
 f0 = 1/(deltaT*N)
 f01 = fp/N
 # sig2 = SygnalyCiagle.Prostokatny(1, 15, 0, 30, 0.5, 0.2)
+siggg = SygnalyCiagle.Sinusoidalny(1, 1, 0, 2, 1/50)
+xtab, ytab = siggg.mkTab()
+plot.normalPlot(xtab, ytab)
 
-
-X, Y, Yi, Ymod = DFT(sumax, sumay, 300)
+X, Y, Yi, Ymod = DFT(xtab, ytab, 300)
 
 for x in range(len(X)):
     X[x] *= f0

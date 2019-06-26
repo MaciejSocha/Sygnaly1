@@ -24,7 +24,7 @@ def fast(tabX, tab):
     pow2 = [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192]
     w = 0
     nb = tab.__len__()
-    print(nb)
+    # print(nb)
     if nb in pow2:
         w = nb
     else:
@@ -33,9 +33,9 @@ def fast(tabX, tab):
             if pow2[i] < nb < pow2[i + 1]:
                 w = pow2[i + 1]
             i += 1
-    print(w)
+    # print(w)
     diff = w - nb
-    print(tabX)
+    # print(tabX)
     it = tabX.__len__()
     itt = tabX[it - 1]
     for x in range(diff):
